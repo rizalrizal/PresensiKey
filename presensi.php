@@ -64,8 +64,9 @@ if(!isset($_SESSION['username']) or !isset($_SESSION['password'])){
       <div class="col-5">
         <div class="row justify-content-center">
           <div class="col-10">
-            <h1>PRESENSI KELAS</h1>
-            <h1>EKSEKUTIF #YUK NGAJI</h1>
+            <h1 style="margin-top: -80px;">PRESENSI KELAS</h1>
+            <h1>EKSEKUTIF</h1>
+            <h1>#YUK NGAJI</h1>
 
             <form  onsubmit="return presensi()">
               <input type="hidden" id="id_presensi" value="<?php echo $row->id_presensi ?>">
@@ -101,7 +102,7 @@ if(!isset($_SESSION['username']) or !isset($_SESSION['password'])){
         <div class="row justify-content-center">
           <h1 class="text-center pt-3"><?php echo $row->nama_sesi.' | '.$row->nama_episode; ?></h1>
           <h2 class="mb-4 text-center"><?php echo tglindonesia($row->tanggal).' | '.$row->tempat; ?></h2>
-          <div class="col-10 table-responsive-sm  table-wrapper-scroll-y my-custom-scrollbar">
+          <div id="data" class="col-10 table-responsive-sm  table-wrapper-scroll-y my-custom-scrollbar">
             <table class="table table-bordered bg-light">
               <thead>
                 <tr>
@@ -123,8 +124,9 @@ if(!isset($_SESSION['username']) or !isset($_SESSION['password'])){
          
         </div>
          <div class="row justify-content-center mt-3">
-          <div class="col-10"><button type="button"  onclick="form_batal()" class="btn btn-danger float-left ">BATALKAN PRESENSI</button>
-              <button type="button" onclick="form_selesai()" class="btn btn-success float-right mr-3">SELESAI DAN SIMPAN</button>
+          <div class="col-10">
+             <button type="button" onclick="form_selesai()" class="btn btn-success float-right mr-3">SELESAI DAN SIMPAN</button> <button type="button"  onclick="form_batal()" class="btn btn-danger float-right" style="margin-right: 10px;">BATALKAN PRESENSI</button> 
+              
           </div>
         </div>
 
@@ -141,14 +143,14 @@ if(!isset($_SESSION['username']) or !isset($_SESSION['password'])){
     <div class="modal-content">
     <form onsubmit="return cekPassword()">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color: #000;">Password</h5>
+        <h5 class="modal-title" id="modal-title" style="color: #000;">Password</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
             <input type="hidden" id="id_presensi_password" value="<?php echo $row->id_presensi ?>">
-           <input class="form-control" type="password" id="password" required>
+           <input class="form-control" type="password" id="password" required placeholder="Masukkan Password">
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -181,6 +183,8 @@ if(!isset($_SESSION['username']) or !isset($_SESSION['password'])){
         },
         success: function(response){ // Ketika proses pengiriman berhasil
           $("tbody").html(response.data_presensi).show();
+          var elem = document.getElementById('data');
+          elem.scrollTop = elem.scrollHeight;
         },
         error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
           alert(thrownError); // Munculkan alert error
@@ -243,12 +247,14 @@ if(!isset($_SESSION['username']) or !isset($_SESSION['password'])){
       function form_batal(){
          type = "1";
          $('#frm_password').modal('show');
+         $('#modal-title').html('Batalkan Presensi?');
          $('#frm_password form')[0].reset();
       }
 
       function form_selesai(){
          type = "2";
          $('#frm_password').modal('show');
+         $('#modal-title').html('Selesai dan Simpan Presensi?');
          $('#frm_password form')[0].reset();
       }
 
