@@ -34,17 +34,17 @@ include 'helper.php';
   >Logout</a>
   <div class="container-fluid gradient-2">
     <div class="row border-button-yn">
-      <div class="col-12 text-center mt-5 mb-3">
-        <h1 class="animated fadeInDown presensi ">presensi</h1>
-        <h1 class="display-3 animated fadeInDown">Kelas Eksekutif #YukNgaji</h1>
+      <div class="col-12 text-center mt-3 mb-3">
+        <h2 class="animated fadeInDown presensi ">presensi</h2>
+        <h1 class="display-4 animated fadeInDown">Kelas Eksekutif #YukNgaji</h1>
       </div>
     </div>
 
     <!-- line -->
     <div class="row position-relative">
       <div class="col-4 position-absolute d-inline-block line animated fadeInRight">
-        <img src="./assets/logoBG.png" class="d-flex mx-auto w-50">
-        <img src="./assets/logo-bawah.png" style="position: absolute; top:45%">
+        <img src="./assets/logoBG.png" class="d-flex mx-auto" style="width: 75% !important;margin-top: 10px;">
+        <img src="./assets/logo-bawah.png" style="position: absolute; top:61%;width: 40%">
       </div>
     </div>
 
@@ -61,6 +61,7 @@ include 'helper.php';
                 </div>
                 <select class="custom-select" id="sesi_kelas" name="sesi_kelas" required>
                   <option value="">-- Pilih --</option>
+                  <!-- Form Sesi -->
                     <?php 
                         $sql= "SELECT id_sesi,nama_sesi FROM tbl_sesi";
                         $stmt = $dbh->query($sql);
@@ -68,9 +69,10 @@ include 'helper.php';
                           echo "<option value='".$row->id_sesi."'>".$row->nama_sesi."</option>";    
                         }
                      ?>
+                     <!-- Form Sesi -->
                 </select>
               </div>
-
+                     <!-- Form Episode -->
               <div class="input-group mb-3 animated fadeInRight">
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="episode_sesi">Episode &nbsp;&nbsp;&nbsp;</label>
@@ -79,23 +81,22 @@ include 'helper.php';
                    <option value="">-- Pilih --</option>
                 </select>
               </div>
-
+                    <!-- Form Tempat -->
               <div class="input-group mb-3 animated fadeInRight">
                 <div class="input-group-prepend">
                   <span class="input-group-text__mod">Tempat &nbsp;</span>
                 </div>
                 <input type="text" class="form-control transparent__input" name="tempat" id="tempat" required>
               </div>
-
+                    <!-- Form Tanggal -->
               <div class="input-group mb-3 animated fadeInRight">
                 <div class="input-group-prepend">
                   <span class="input-group-text__mod">Tanggal</span>
                 </div>
                 <input data-provide="datepicker"  data-date-format="dd-mm-yyyy" class="datepicker form-control transparent__input" name="tanggal" id="tanggal" onkeydown="return false" required>
               </div>
-
-              <button class="btn btn-light rounded-lg float-right mt-3 w-50 animated fadeInLeft" type="submit">Kelas
-                Baru</button>
+              <!-- Submit Button -->
+              <button class="btn btn-light rounded-lg float-right mt-3 w-50 animated fadeInLeft" type="submit">Kelas Baru</button>
 
             </form>
           </div>
@@ -119,6 +120,7 @@ include 'helper.php';
                 </tr>
               </thead>
               <tbody>
+                <!-- Form Riwayat -->
                 <?php
                   $no = 1;
                   $sql  = "SELECT * FROM tbl_presensi tp join tbl_episode te on tp.id_episode = te.id_episode join tbl_sesi ts on te.id_sesi = ts.id_sesi";
@@ -140,7 +142,7 @@ include 'helper.php';
                   $no++;
                 } 
                 ?>
-                
+                <!-- Form Riwayat -->
                
               </tbody>
             </table>

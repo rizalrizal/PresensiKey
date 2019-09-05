@@ -1,6 +1,6 @@
 <?php
-   // Start Konfigurasi Koneksi Database
 
+   // Start Konfigurasi Koneksi Database
    $dbname     = 'presensikey';
    $dbusername = 'root';
    $dbpassword = '';
