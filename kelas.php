@@ -96,7 +96,13 @@ include 'helper.php';
                 <input data-provide="datepicker"  data-date-format="dd-mm-yyyy" class="datepicker form-control transparent__input" name="tanggal" id="tanggal" onkeydown="return false" required>
               </div>
               <!-- Submit Button -->
-              <button class="btn btn-light rounded-lg float-right mt-3 w-50 animated fadeInLeft" type="submit">Kelas Baru</button>
+              <div class="row"> 
+                <div class="col-6"><a href="data_peserta.php" class="btn btn-block btn-primary rounded-lg float-left mt-3 animated fadeInLeft">Data Peserta</a> </div>
+                <div class="col-6"><button class="btn btn-block btn-light rounded-lg float-right mt-3 animated fadeInLeft" type="submit">Kelas Baru</button> </div>
+              </div>
+
+              
+              
 
             </form>
           </div>

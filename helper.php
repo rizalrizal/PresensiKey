@@ -1,4 +1,3 @@
-<!-- Setting Tanggalan Indonesia -->
 <?php 
 function tglindonesia($tanggal){
 	$splitTGL = explode('-', $tanggal);

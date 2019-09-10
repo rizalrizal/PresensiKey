@@ -126,6 +126,7 @@ if(!isset($_SESSION['username']) or !isset($_SESSION['password'])){
          <div class="row justify-content-center mt-3">
           <div class="col-10">
              <button type="button" onclick="form_selesai()" class="btn btn-success float-right mr-3">SELESAI DAN SIMPAN</button> <button type="button"  onclick="form_batal()" class="btn btn-danger float-right" style="margin-right: 10px;">BATALKAN PRESENSI</button> 
+             <button type="button"  onclick="keDataPeserta()" class="btn btn-primary float-right" style="margin-right: 10px;">DATA PESERTA</button> 
               
           </div>
         </div>
@@ -300,6 +301,9 @@ if(!isset($_SESSION['username']) or !isset($_SESSION['password'])){
             }        
           });
           return false;
+      }
+      function keDataPeserta(){
+        window.open('data_peserta.php', '_blank');
       }
  
   </script>

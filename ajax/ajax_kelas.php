@@ -81,7 +81,13 @@ if($_GET['action'] == "option_episode"){
         <td><b>HO</b></td>
     </tr>";
     $sql= "SELECT * FROM tbl_detail_presensi tdp join tbl_presensi tp on tdp.id_presensi = tp.id_presensi join tbl_peserta tps on tdp.id_peserta = tps.id_peserta where tdp.id_presensi= '$id_presensi'";
+    $sqlCountSudah= "SELECT * FROM tbl_detail_presensi tdp join tbl_presensi tp on tdp.id_presensi = tp.id_presensi join tbl_peserta tps on tdp.id_peserta = tps.id_peserta where tdp.id_presensi= '$id_presensi' and tdp.ho = '1'";
+    $sqlCountBelum= "SELECT * FROM tbl_detail_presensi tdp join tbl_presensi tp on tdp.id_presensi = tp.id_presensi join tbl_peserta tps on tdp.id_peserta = tps.id_peserta where tdp.id_presensi= '$id_presensi' and tdp.ho = '0'";
     $stmt = $dbh->query($sql);
+    $stmtCountSudah = $dbh->query($sqlCountSudah);
+    $stmtCountBelum = $dbh->query($sqlCountBelum);
+    $jmlSudah = $stmtCountSudah->rowCount();
+    $jmlBelum = $stmtCountBelum->rowCount();
     while($row = $stmt->fetchObject()){
         echo "<tr>";
         $ho = '';
@@ -94,6 +100,18 @@ if($_GET['action'] == "option_episode"){
         echo "<td>$ho</td>";
         echo "</tr>";
     }
+    echo "<tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><b>Sudah HO</b></td>
+        <td>$jmlSudah</td>
+    </tr>
+    <tr>
+        <td><b>Belum HO</b></td>
+        <td>$jmlBelum</td>
+    </tr>";
      echo "</table>";
 }elseif ($_GET['action'] == "hapus") {
     $id_presensi = $_GET['id_presensi'];
