@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Sep 2019 pada 04.14
+-- Waktu pembuatan: 13 Sep 2019 pada 05.15
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -90,58 +90,59 @@ CREATE TABLE `tbl_peserta` (
   `id_peserta` int(11) NOT NULL,
   `nama` varchar(200) DEFAULT NULL,
   `email` varchar(200) DEFAULT NULL,
-  `alamat` text
+  `alamat` text,
+  `no_hp` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_peserta`
 --
 
-INSERT INTO `tbl_peserta` (`id_peserta`, `nama`, `email`, `alamat`) VALUES
-(1, 'Eko Budiyanto', 'eko@gmail.com', 'jayapura'),
-(2, 'Aji Abdul Ratman', NULL, NULL),
-(3, 'Emil Nurdwiyanto', NULL, NULL),
-(4, 'Novaldi Mustamin\r\n', NULL, NULL),
-(5, 'Agus Setiawan Adi Nugroho\r\n', NULL, NULL),
-(6, 'Andri Perdana\r\n', NULL, NULL),
-(7, 'Ryan Fajar Ardianto Wishnu Irwanantyo\r\n', NULL, NULL),
-(8, 'Arif Budi Kusuma\r\n', NULL, NULL),
-(9, 'Rizki Surtiyan Surya\r\n', NULL, NULL),
-(10, 'Ganda Anugerah Marryos\r\n', NULL, NULL),
-(11, 'Dicky Panji Ismaya', NULL, NULL),
-(12, 'Yogandana', NULL, NULL),
-(13, 'Yakub Setyawan\r\n', NULL, NULL),
-(14, 'Pribadi Halim\r\n', NULL, NULL),
-(15, 'Achmad Suryono\r\n', NULL, NULL),
-(16, 'Adiyan Satya Dwi Purnama\r\n', NULL, NULL),
-(17, 'Muhammad Rojihan Alfi Choir\r\n', NULL, NULL),
-(18, 'Andika Chosy Pratama\r\n', NULL, NULL),
-(19, 'Yuda Adi Wibowo', NULL, NULL),
-(20, 'Bambang Triono\r\n', NULL, NULL),
-(21, 'Henry Eka Pradana\r\n', NULL, NULL),
-(22, 'M. Zufar Taqiuddin\r\n', NULL, NULL),
-(23, 'Ahmad Dwi Setiawan\r\n', NULL, NULL),
-(24, 'Anggit Apriansa\r\n', NULL, NULL),
-(25, 'Muhammad Arifaza R. Bintang\r\n', NULL, NULL),
-(26, 'Aruniyal Haqqi \r\n', NULL, NULL),
-(27, 'Mulyono\r\n', NULL, NULL),
-(28, 'Hasbi Hurlian\r\n', NULL, NULL),
-(29, 'Septian Tri Cahyo\r\n', NULL, NULL),
-(30, 'Bagas Hendrayudha\r\n', NULL, NULL),
-(31, 'Afroni\r\n', NULL, NULL),
-(32, 'Deni Ridwan Daru \r\n', NULL, NULL),
-(33, 'Ganesha Amrina Wijaya\r\n', NULL, NULL),
-(34, 'Raghda Hassa Parardhya Cornika\r\n', NULL, NULL),
-(35, 'Usamah Saiful Haq\r\n', NULL, NULL),
-(36, 'Maki Lukmanul Hakim\r\n', NULL, NULL),
-(37, 'Agus Nurcahyo\r\n', NULL, NULL),
-(38, 'ilham feriyanto \r\n', NULL, NULL),
-(39, 'Bagas pribadi\r\n', NULL, NULL),
-(40, 'Aldi Hendarsyah\r\n', NULL, NULL),
-(41, 'Arif Budi Almawan\r\n', NULL, NULL),
-(42, 'Muhammad Fajar Nuryana\r\n', NULL, NULL),
-(43, 'Nova Pramono Putro\r\n', NULL, NULL),
-(44, 'Tri Heri Setiawan\r\n', NULL, NULL);
+INSERT INTO `tbl_peserta` (`id_peserta`, `nama`, `email`, `alamat`, `no_hp`) VALUES
+(1, 'Eko Budiyanto', 'eko@gmail.com', 'jayapura', NULL),
+(2, 'Aji Abdul Ratman', NULL, NULL, NULL),
+(3, 'Emil Nurdwiyanto', NULL, NULL, NULL),
+(4, 'Novaldi Mustamin\r\n', NULL, NULL, NULL),
+(5, 'Agus Setiawan Adi Nugroho\r\n', NULL, NULL, NULL),
+(6, 'Andri Perdana\r\n', NULL, NULL, NULL),
+(7, 'Ryan Fajar Ardianto Wishnu Irwanantyo\r\n', NULL, NULL, NULL),
+(8, 'Arif Budi Kusuma\r\n', NULL, NULL, NULL),
+(9, 'Rizki Surtiyan Surya\r\n', NULL, NULL, NULL),
+(10, 'Ganda Anugerah Marryos\r\n', NULL, NULL, NULL),
+(11, 'Dicky Panji Ismaya', NULL, NULL, NULL),
+(12, 'Yogandana', NULL, NULL, NULL),
+(13, 'Yakub Setyawan\r\n', NULL, NULL, NULL),
+(14, 'Pribadi Halim\r\n', NULL, NULL, NULL),
+(15, 'Achmad Suryono', 'achmad@gmail.com', 'Jl satu', '082245312637'),
+(16, 'Adiyan Satya Dwi Purnama\r\n', NULL, NULL, NULL),
+(17, 'Muhammad Rojihan Alfi Choir\r\n', NULL, NULL, NULL),
+(18, 'Andika Chosy Pratama\r\n', NULL, NULL, NULL),
+(19, 'Yuda Adi Wibowo', NULL, NULL, NULL),
+(20, 'Bambang Triono\r\n', NULL, NULL, NULL),
+(21, 'Henry Eka Pradana\r\n', NULL, NULL, NULL),
+(22, 'M. Zufar Taqiuddin\r\n', NULL, NULL, NULL),
+(23, 'Ahmad Dwi Setiawan\r\n', NULL, NULL, NULL),
+(24, 'Anggit Apriansa\r\n', NULL, NULL, NULL),
+(25, 'Muhammad Arifaza R. Bintang\r\n', NULL, NULL, NULL),
+(26, 'Aruniyal Haqqi \r\n', NULL, NULL, NULL),
+(27, 'Mulyono\r\n', NULL, NULL, NULL),
+(28, 'Hasbi Hurlian\r\n', NULL, NULL, NULL),
+(29, 'Septian Tri Cahyo\r\n', NULL, NULL, NULL),
+(30, 'Bagas Hendrayudha\r\n', NULL, NULL, NULL),
+(31, 'Afroni\r\n', NULL, NULL, NULL),
+(32, 'Deni Ridwan Daru \r\n', NULL, NULL, NULL),
+(33, 'Ganesha Amrina Wijaya\r\n', NULL, NULL, NULL),
+(34, 'Raghda Hassa Parardhya Cornika\r\n', NULL, NULL, NULL),
+(35, 'Usamah Saiful Haq\r\n', NULL, NULL, NULL),
+(36, 'Maki Lukmanul Hakim\r\n', NULL, NULL, NULL),
+(37, 'Agus Nurcahyo\r\n', NULL, NULL, NULL),
+(38, 'ilham feriyanto \r\n', NULL, NULL, NULL),
+(39, 'Bagas pribadi\r\n', NULL, NULL, NULL),
+(40, 'Aldi Hendarsyah\r\n', NULL, NULL, NULL),
+(41, 'Arif Budi Almawan\r\n', NULL, NULL, NULL),
+(42, 'Muhammad Fajar Nuryana\r\n', NULL, NULL, NULL),
+(43, 'Nova Pramono Putro\r\n', NULL, NULL, NULL),
+(44, 'Tri Heri Setiawan\r\n', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -263,13 +264,13 @@ ALTER TABLE `tbl_episode`
 -- AUTO_INCREMENT untuk tabel `tbl_peserta`
 --
 ALTER TABLE `tbl_peserta`
-  MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_presensi`
 --
 ALTER TABLE `tbl_presensi`
-  MODIFY `id_presensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_presensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_sesi`

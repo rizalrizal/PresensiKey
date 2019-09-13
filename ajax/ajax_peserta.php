@@ -2,7 +2,7 @@
 include "../koneksi.php";
 include "../helper.php";
 if($_GET['action'] == "table_data"){
-    $sql= "SELECT id_peserta,nama,email,alamat FROM tbl_peserta order by nama asc";
+    $sql= "SELECT id_peserta,nama,email,alamat,no_hp FROM tbl_peserta order by nama asc";
     $stmt = $dbh->query($sql);
     $jumlah = $stmt->rowCount();
     $data = array();
@@ -12,6 +12,7 @@ if($_GET['action'] == "table_data"){
        $row = array();
        $row[] = $no;
        $row[] = $r->nama;
+       $row[] = $r->no_hp;
        $row[] = $r->email;
        $row[] = $r->alamat;
        $row[] = '<div class="text-center">
@@ -34,13 +35,15 @@ if($_GET['action'] == "table_data"){
    $nama = $_POST['nama'];
    $email = $_POST['email'];
    $alamat = $_POST['alamat'];
+   $no_hp = $_POST['no_hp'];
 
-   $sql = "UPDATE tbl_peserta SET nama = :nama,email = :email,alamat = :alamat WHERE id_peserta = :id_peserta";
+   $sql = "UPDATE tbl_peserta SET nama = :nama,email = :email,alamat = :alamat,no_hp = :no_hp WHERE id_peserta = :id_peserta";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id_peserta', $id, PDO::PARAM_STR);
         $stmt->bindParam(':nama', $nama, PDO::PARAM_STR);
         $stmt->bindParam(':alamat', $alamat, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':no_hp', $no_hp, PDO::PARAM_STR);
         $result = $stmt->execute(); 
 
 }elseif($_GET['action'] == "insert"){
@@ -48,12 +51,14 @@ if($_GET['action'] == "table_data"){
    $nama = $_POST['nama'];
    $email = $_POST['email'];
    $alamat = $_POST['alamat'];
+   $no_hp = $_POST['no_hp'];
 
-   $sql = "INSERT INTO tbl_peserta SET nama = :nama,email = :email,alamat = :alamat";
+   $sql = "INSERT INTO tbl_peserta SET nama = :nama,email = :email,alamat = :alamat,no_hp = :no_hp";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':nama', $nama, PDO::PARAM_STR);
         $stmt->bindParam(':alamat', $alamat, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':no_hp', $no_hp, PDO::PARAM_STR);
         $result = $stmt->execute(); 
 
 }elseif($_GET['action'] == "delete"){

@@ -65,6 +65,7 @@ include 'helper.php';
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
+                <th scope="col">No HP</th>
                 <th scope="col">Email</th>
                 <th scope="col">Alamat</th>
                 <th scope="col" width="200">Aksi</th>
@@ -111,9 +112,14 @@ include 'helper.php';
                         </div>
                         </div>
                         <div class="form-row">
-                          <div class="form-group col-md-12">
+                        
+                          <div class="form-group col-md-6">
                             <label for="Alamat">Alamat</label>
                             <textarea class="form-control" rows="5" name="alamat" id="alamat"></textarea>
+                          </div>
+                            <div class="form-group col-md-6">
+                            <label for="No HP">No HP</label>
+                            <input type="text" class="form-control" name="no_hp" id="no_hp" maxlength="15">
                           </div>
                         </div>
                     </div>
@@ -170,6 +176,7 @@ include 'helper.php';
                  $('#nama').val(data.nama);
                  $('#email').val(data.email);
                  $('#alamat').val(data.alamat);
+                 $('#no_hp').val(data.no_hp);
               },
               error : function(){
                  alert("Tidak dapat menampilkan data!");
