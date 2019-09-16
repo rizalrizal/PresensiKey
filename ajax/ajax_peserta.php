@@ -10,9 +10,9 @@ if($_GET['action'] == "table_data"){
     while($r = $stmt->fetchObject()){
        $id = $r->id_peserta;
        $row = array();
-       $row[] = $no;
+       $row[] = '<div class="text-center">'.$no.'</div>';
        $row[] = $r->nama;
-       $row[] = $r->no_hp;
+       $row[] = '<div class="text-right">'.$r->no_hp.'</div>';
        $row[] = $r->email;
        $row[] = $r->alamat;
        $row[] = '<div class="text-center">
@@ -26,7 +26,7 @@ if($_GET['action'] == "table_data"){
     $output = array("draw"=>1,"recordsTotal"=>$jumlah,"recordsFiltered"=>$jumlah,"data" => $data);
     echo json_encode($output);
 }elseif($_GET['action'] == "form_data"){
-  $sql= "SELECT id_peserta,nama,email,alamat FROM tbl_peserta where id_peserta='$_GET[id]'";
+  $sql= "SELECT id_peserta,nama,email,alamat,no_hp FROM tbl_peserta where id_peserta='$_GET[id]'";
   $stmt = $dbh->query($sql);
   $data  = $stmt->fetchObject();  
   echo json_encode($data);

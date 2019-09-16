@@ -35,7 +35,7 @@ include 'helper.php';
   >Kelas</a>
   <div class="container-fluid gradient-2">
     <div class="row">
-      <div class="col-12 text-left mt-3 mb-3">
+      <div class="col-12 text-center mt-3 mb-3">
         <h2 class="animated fadeInDown presensi ">Data Peserta Presensi</h2>
         <h1 class="display-4 animated fadeInDown">Kelas Eksekutif #YukNgaji</h1>
       </div>
@@ -51,7 +51,7 @@ include 'helper.php';
 
     <div class="row">
 
-      <div class="col-8">
+      <div class="col-12">
         
         <div class="row mb-4 text-left pt-3"> 
           <div class="col-12">
@@ -59,7 +59,7 @@ include 'helper.php';
           </div>
         </div>
         <div class="row">
-          <div class="col-11 table-responsive-sm table-wrapper-scroll-y my-custom-scrollbar2">
+          <div class="col-12 table-responsive-sm table-wrapper-scroll-y my-custom-scrollbar2">
             <table class="table table-bordered table-hover table-sm bg-light">
             <thead>
               <tr>
@@ -79,9 +79,9 @@ include 'helper.php';
         </div>
       </div>
 
-      <div class="col-4 mt-5 text-center">
+     <!--  <div class="col-4 mt-5 text-center">
      <img src="./assets/logoBG.png" class="d-flex mx-auto mt-5" style="width: 60% !important;">
-      </div>
+      </div> -->
 
     </div>
 

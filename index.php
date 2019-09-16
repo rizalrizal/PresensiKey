@@ -41,7 +41,7 @@ include 'koneksi.php';
 
     <!-- Tajuk Judul -->
     <div class="row h-100 text-center">
-      <div class="my__center col-8 pl-5">
+      <div class="my__center col-8 pl-5" style="margin-top: 240px;">
         <h2 class="animated fadeInLeft  presensi__animate">presensi</h2>
         <h1 class="animated fadeInLeft"><strong>Kelas Eksekutif #YukNgaji</strong></h1>
       </div>
